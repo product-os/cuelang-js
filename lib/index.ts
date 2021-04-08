@@ -1,7 +1,8 @@
 import * as path from 'path';
 import './wasm_exec';
-import { fs as memfs } from 'memfs';
 import * as nodefs from 'fs';
+import { fs as memfs } from 'memfs';
+export { memfs }
 
 let moduleCache: WebAssembly.Module | null = null;
 
