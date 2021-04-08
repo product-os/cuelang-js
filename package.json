@@ -1,8 +1,8 @@
 {
-  "name": "cue-js",
+  "name": "cuelang-js",
   "version": "0.1.0",
   "description": "CUE for node.js & browser",
-  "homepage": "https://github.com/product-os/cue-js#readme",
+  "homepage": "https://github.com/product-os/cuelang-js#readme",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "keywords": [
@@ -15,10 +15,10 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/product-os/cue-js.git"
+    "url": "git+https://github.com/product-os/cuelang-js.git"
   },
   "bugs": {
-    "url": "https://github.com/product-os/cue-js/issues"
+    "url": "https://github.com/product-os/cuelang-js/issues"
   },
   "files": [
     "build/"
