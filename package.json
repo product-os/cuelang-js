@@ -1,0 +1,59 @@
+{
+  "name": "cue-js",
+  "version": "0.1.0",
+  "description": "CUE for node.js & browser",
+  "homepage": "https://github.com/product-os/cue-js#readme",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "keywords": [
+    "balena",
+    "typescript",
+    "cue",
+    "cuelang"
+  ],
+  "author": "",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/product-os/cue-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/product-os/cue-js/issues"
+  },
+  "files": [
+    "build/"
+  ],
+  "scripts": {
+    "clean": "rimraf build",
+    "build": "npm run clean && npm run copy-files && tsc",
+    "lint": "balena-lint lib tests",
+    "lint-fix": "balena-lint --typescript --fix lib tests",
+    "test:node": "mocha -r ts-node/register --reporter spec tests/**/*.spec.ts",
+    "test:browser": "karma start",
+    "test": "npm run build && npm run lint && npm run test:node && npm run test:browser",
+    "test:fast": "npm run build && npm run test:node",
+    "prepack": "npm run build",
+    "copy-files": "copyfiles -u 1 ./lib/main.wasm ./build/"
+  },
+  "devDependencies": {
+    "@balena/lint": "^5.0.4",
+    "@types/chai": "^4.2.11",
+    "@types/chai-as-promised": "^7.1.2",
+    "@types/mocha": "^7.0.2",
+    "balena-config-karma": "^3.0.0",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "copy-webpack-plugin": "6.0.2",
+    "copyfiles": "^2.4.1",
+    "husky": "^4.2.5",
+    "karma": "^5.0.9",
+    "lint-staged": "^10.1.7",
+    "mocha": "^7.2.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.9.3"
+  },
+  "dependencies": {
+    "memfs": "^3.2.2"
+  }
+}
