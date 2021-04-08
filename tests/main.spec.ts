@@ -1,7 +1,6 @@
 import { expect } from './chai';
-import cue, { isBrowser } from '../lib';
+import cue, { isBrowser, memfs } from '../lib';
 import * as path from 'path';
-import { fs as memfs } from 'memfs';
 import * as nodefs from 'fs';
 
 describe('cue', function () {

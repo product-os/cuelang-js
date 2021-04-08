@@ -11,7 +11,10 @@
 In node.js `.cue` files will be loaded from the local file system
 
 ```
-const result = await cue('export', ['/path/to/your.cue'], {"--out": "json"})
+import cue from 'cuelang-js'
+
+cue('export', ['/path/to/your.cue'], {"--out": "json"})
+	.then(result => console.log(result.stdout))
 ```
 
 ## Usage browser
@@ -19,7 +22,7 @@ const result = await cue('export', ['/path/to/your.cue'], {"--out": "json"})
 In browser the `.cue` files will be loaded via `memfs`. Write your files to `memfs` before evaluating them.
 
 ```
-import { fs as memfs } from 'memfs';
+import cue, { memfs } from 'cuelang-js'
 
 const memfs.writeFileSync('/your.cue', 'hello: "world"');
 const result = await cue('export', ['/your.cue'], {"--out": "json"})
