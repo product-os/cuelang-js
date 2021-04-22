@@ -38,4 +38,14 @@ describe('cue', function () {
 			stderr: 'hello: incomplete value string\n',
 		});
 	});
+
+	it('should export json', async function () {
+		await expect(
+			cue('export', [await loadFixture('concrete.cue')], {"--out": "json"}),
+		).to.eventually.become({
+			code: 0,
+			stdout: `{\n    \"hello\": \"world\"\n}\n`,
+			stderr: '',
+		});
+	});
 });

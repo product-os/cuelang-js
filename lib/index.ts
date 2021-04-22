@@ -86,7 +86,7 @@ export default async function (
 		if (flags[key] === true) {
 			return key;
 		} else {
-			return `${key} ${flags[key]}`;
+			return `${key}=${flags[key]}`;
 		}
 	});
 	go.argv = [__filename, command, ...args, ...flagList];
@@ -102,6 +102,6 @@ export default async function (
 		return { code, stdout: global.stdout, stderr: global.stderr };
 	} finally {
 		global.stdout = '';
-		global.stdout = '';
+		global.stderr = '';
 	}
 }
