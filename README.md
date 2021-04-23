@@ -1,6 +1,9 @@
 # cuelang-js
 
-[CUE](https://github.com/cuelang/cue) for node.js & browser using WASM. Supports all commands of the CUE CLI. 
+[CUE](https://github.com/cuelang/cue) for node.js & browser using WASM. Supports all commands of the CUE CLI.
+
+- CUE: v0.3.2
+- Built with Go: 1.15.6
 
 ## Install
 
@@ -13,13 +16,12 @@ In node.js `.cue` files will be loaded from the local file system
 ```
 import cue from 'cuelang-js'
 
-cue('export', ['/path/to/your.cue'], {"--out": "json"})
-	.then(result => console.log(result.stdout))
+const result = await cue('export', ['/path/to/your.cue'], {"--out": "json"})
 ```
 
 ## Usage browser
 
-In browser the `.cue` files will be loaded via `memfs`. Write your files to `memfs` before evaluating them.
+In browser `.cue` files will be loaded via `memfs`. Write your files to `memfs` before evaluating them.
 
 ```
 import cue, { memfs } from 'cuelang-js'
@@ -28,4 +30,14 @@ const memfs.writeFileSync('/your.cue', 'hello: "world"');
 const result = await cue('export', ['/your.cue'], {"--out": "json"})
 ```
 
+## Learning Resources
+
+- [CUE Docs](https://cuelang.org/docs/) - Official documentation
+- [CUE Discussions](https://github.com/cuelang/cue/discussions) - Recommended for questions & answers
+- [CUE Language Specification](https://github.com/cuelang/cue/blob/master/doc/ref/spec.md) - Let's get technical
+- [CUE Standard Packages](https://github.com/cuelang/cue/blob/master/doc/ref/spec.md) - Available packages for import
+- [CUEtorials](https://cuetorials.com/) - CUE tutorials by the Hofstadter team
+- [CUE Playground](https://cuelang.org/play/#cue@export@cue) - Experiment with CUE in the browser
+- [CUE Playground Tip](https://tip.cuelang.org/play/#cue@export@cue) - Same as above but with the latests alpha version of CUE
+- [CUE Kubernetes Tutorial](https://github.com/cuelang/cue/blob/v0.3.2/doc/tutorial/kubernetes/README.md) - Learn how CUE can dramatically simplify Kubernetes configuration
 
