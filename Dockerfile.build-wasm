@@ -1,0 +1,13 @@
+# target: build-stage
+ARG GOLANG_VERSION
+FROM docker.io/golang:${GOLANG_VERSION}-alpine AS build-stage
+ARG CUE_VERSION
+ENV \
+	GO111MODULE='on'
+RUN go get cuelang.org/go/cmd/cue@${CUE_VERSION}
+WORKDIR /go/pkg/mod/cuelang.org/go@${CUE_VERSION}
+RUN GOOS=js GOARCH=wasm go build -o /go/bin/cue.wasm ./cmd/cue
+
+# target: export-stage
+FROM scratch AS export-stage
+COPY --from=build-stage /go/bin/cue.wasm /

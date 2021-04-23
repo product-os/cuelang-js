@@ -75,10 +75,10 @@ export default async function (
 ) {
 	if (!moduleCache && globalThis.require) {
 		moduleCache = await WebAssembly.compile(
-			nodefs.readFileSync(path.join(__dirname, 'main.wasm')),
+			nodefs.readFileSync(path.join(__dirname, 'cue.wasm')),
 		);
 	} else if (!moduleCache) {
-		moduleCache = await WebAssembly.compileStreaming(fetch('main.wasm'));
+		moduleCache = await WebAssembly.compileStreaming(fetch('cue.wasm'));
 	}
 	const go = new Go();
 	const instance = await WebAssembly.instantiate(moduleCache, go.importObject);
