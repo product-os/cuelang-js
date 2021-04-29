@@ -11,7 +11,7 @@
 
 ## Usage node.js
 
-In node.js `.cue` files will be loaded from the local file system
+In node.js `.cue` files are loaded from the local file system.
 
 ```
 import cue from 'cuelang-js'
@@ -21,7 +21,7 @@ const result = await cue('export', ['/path/to/your.cue'], {"--out": "json"})
 
 ## Usage browser
 
-In browser `.cue` files will be loaded via `memfs`. Write your files to `memfs` before evaluating them.
+In browser `.cue` files are loaded via `memfs`. Write your files to `memfs` before executing a command.
 
 ```
 import cue, { memfs } from 'cuelang-js'

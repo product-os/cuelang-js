@@ -48,4 +48,14 @@ describe('cue', function () {
 			stderr: '',
 		});
 	});
+
+	it('should eval injected value', async function () {
+		await expect(
+			cue('export', [await loadFixture('inject.cue')], {"--inject": "hello=world"}),
+		).to.eventually.become({
+			code: 0,
+			stdout: `{\n    \"hello\": \"world\"\n}\n`,
+			stderr: '',
+		});
+	});
 });
