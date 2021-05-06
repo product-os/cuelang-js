@@ -13,7 +13,7 @@
 
 In node.js `.cue` files are loaded from the local file system.
 
-```
+```javascript
 import cue from 'cuelang-js'
 
 const result = await cue('export', ['/path/to/your.cue'], {"--out": "json"})
@@ -23,11 +23,30 @@ const result = await cue('export', ['/path/to/your.cue'], {"--out": "json"})
 
 In browser `.cue` files are loaded via `memfs`. Write your files to `memfs` before executing a command.
 
-```
+```javascript
 import cue, { memfs } from 'cuelang-js'
 
-const memfs.writeFileSync('/your.cue', 'hello: "world"');
+await memfs.writeFileSync('/your.cue', 'hello: "world"');
 const result = await cue('export', ['/your.cue'], {"--out": "json"})
+```
+
+## Imports
+
+For external imports CUE will check the current working directory for a `cue.mod` directory.
+
+Given the following import CUE will attempt to import from `./cue.mod/pkg/example/test`
+
+```cue
+import (
+	"example.com/test"
+)
+```
+
+In the browser the current working directory path is root (`/`) use `memfs` to write your external package to the expected paths.
+
+```javascript
+await memfs.mkdirSync('/cue.mod/pkg/example.com/test', { recursive: true })
+await memfs.writeFileSync('/cue.mod/pkg/example.com/test/test.cue', 'package test\nmessage: "I was imported!"')
 ```
 
 ## Learning Resources
