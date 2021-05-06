@@ -58,4 +58,18 @@ describe('cue', function () {
 			stderr: '',
 		});
 	});
+
+	it('should import user defined package', async function () {
+		if (isBrowser) {
+			await memfs.mkdirSync('/cue.mod/pkg/example.com/test', { recursive: true })
+			await memfs.writeFileSync('/cue.mod/pkg/example.com/test/test.cue', 'package test\nmessage: "I was imported!"')
+		}
+		await expect(
+			cue('export', [await loadFixture('import.cue')], {}),
+		).to.eventually.become({
+			code: 0,
+			stdout: `{\n    \"message\": \"I was imported!\"\n}\n`,
+			stderr: '',
+		});
+	});
 });
