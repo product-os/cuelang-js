@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2021-04-08
 
+## 1.3.0 - 2021-05-06
+
+* minor: CUE version v0.4.0-beta.1 [Thomas Manning]
+
 ## 1.2.0 - 2021-05-06
 
 * minor: add test to demonstrate import support minor: refactor `fs` monkey patching to use proxy [Thomas Manning]
