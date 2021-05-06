@@ -26,7 +26,7 @@
   "scripts": {
     "clean": "rimraf build",
     "build": "npm run clean && npm run copy-files && tsc",
-    "build:wasm": "DOCKER_BUILDKIT=1 docker build --build-arg GOLANG_VERSION=1.15.6 --build-arg CUE_VERSION=v0.3.2 -o lib -f Dockerfile.build-wasm .",
+    "build:wasm": "DOCKER_BUILDKIT=1 docker build --build-arg GOLANG_VERSION=1.15.6 --build-arg CUE_VERSION=v0.4.0-beta.1 -o lib -f Dockerfile.build-wasm .",
     "lint": "balena-lint lib tests",
     "lint-fix": "balena-lint --typescript --fix lib tests",
     "test:node": "mocha -r ts-node/register --reporter spec tests/**/*.spec.ts",
