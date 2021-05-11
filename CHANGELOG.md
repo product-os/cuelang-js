@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2021-04-08
 
+## 1.3.1 - 2021-05-11
+
+* patch: warn not throw when resume is called after exit [Thomas Manning]
+
 ## 1.3.0 - 2021-05-06
 
 * minor: CUE version v0.4.0-beta.1 [Thomas Manning]
