@@ -41,7 +41,7 @@
     "@types/chai": "^4.2.11",
     "@types/chai-as-promised": "^7.1.2",
     "@types/mocha": "^7.0.2",
-    "balena-config-karma": "^3.0.0",
+    "balena-config-karma": "^4.0.0",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "copy-webpack-plugin": "6.4.1",
