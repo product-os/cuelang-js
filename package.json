@@ -44,7 +44,7 @@
     "balena-config-karma": "^3.0.0",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
-    "copy-webpack-plugin": "6.0.4",
+    "copy-webpack-plugin": "6.4.1",
     "copyfiles": "^2.4.1",
     "husky": "^4.2.5",
     "karma": "^5.0.9",
