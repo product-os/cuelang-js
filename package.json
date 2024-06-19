@@ -37,7 +37,7 @@
     "copy-files": "copyfiles -u 1 ./lib/cue.wasm ./build/"
   },
   "devDependencies": {
-    "@balena/lint": "^5.0.4",
+    "@balena/lint": "^7.0.0",
     "@types/chai": "^4.2.11",
     "@types/chai-as-promised": "^7.1.2",
     "@types/mocha": "^7.0.2",
