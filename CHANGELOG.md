@@ -1,8 +1,6 @@
-## 1.0.0 - 2021-04-08
+## 1.4.0 - 2026-01-16
 
-* major: execute cue commands for both node and browser [Thomas Manning]
-
-## 1.0.1 - 2021-04-08
+* minor: update CUE version to v0.15.3
 
 ## 1.3.1 - 2021-05-11
 
@@ -26,3 +24,9 @@
 * patch: fix flags must use equals sign between flag and value patch: fix reset stdout after execution [Thomas Manning]
 
 * patch: export memfs for convenience [Thomas Manning]
+
+## 1.0.1 - 2021-04-08
+
+## 1.0.0 - 2021-04-08
+
+* major: execute cue commands for both node and browser [Thomas Manning]
