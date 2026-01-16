@@ -53,6 +53,7 @@ await memfs.writeFileSync('/cue.mod/pkg/example.com/test/test.cue', 'package tes
 
 | CUE             | cuelang-js         |
 | --------------- | ------------------ |
+| v0.15.3         | 1.4.0              |
 | v0.4.0-beta.1   | 1.3.0              |
 | v0.3.2          | 1.2.0              |
 
