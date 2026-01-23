@@ -55,6 +55,6 @@
     "typescript": "^3.9.3"
   },
   "dependencies": {
-    "memfs": "^3.2.2"
+    "memfs": "^4.0.0"
   }
 }
